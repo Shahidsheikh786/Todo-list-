@@ -1,0 +1,173 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::selection{
+  background: #ff5945;
+  color: #fff;
+}
+
+body{
+  
+}
+
+.container{
+  width: 100%;
+  min-height:100vh;
+  background: linear-gradient(135deg ,#153677 , #4e085f );
+  padding: 10px;
+  margin: 0;
+}
+.todo-app{
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  max-height: 80vh;
+  
+}
+.todo-app h2{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.todo-app h2 img{
+  width: 30px;
+  margin-left: 10px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+   height: 60px;
+}
+
+input{
+  flex: 1;
+  outline: none;
+  border: none;
+  font-size: 17px;
+background: transparent;
+padding: 10px ;
+padding-right: 15px;
+font-weight: 14px;
+}
+button{
+  height: 60px;
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #ff5945;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+ul{
+  overflow-y: auto;
+  max-height: 70vh;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+
+ul li{
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 30px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  
+}
+
+ul li::before {
+  content :'';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(unchecked.png);
+  background-size: cover;
+  background-position: center;
+  left:8px;
+  top: 8px;
+}
+
+ul li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+ul li.checked::before{
+  background-image: url(checked.png);
+}
+
+ul li span{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+ul li span:hover{
+  background: #edeef0;
+}
+
+
+ /* responsive css */
+ 
+ @media (max-width:650px) {
+  
+ .todo-app{
+   max-width: 100%;
+   
+ }
+ .row{
+   position: relative;
+   padding-right: 220px;
+
+ }
+ button{
+   position: absolute;
+   right: 0;
+   height: 60px;
+   width: 75px;
+   padding: 10px 0px;
+   text-align: center;
+   
+ }
+ input {
+  padding: 7px;
+ width: 190px;
+
+ }
+ 
+ ul li{
+   font-size: 15px;
+   padding-right: 30px;
+ }
+ ul li::before{
+   height: 20px;
+   width: 20px;
+ }
+ }
+ 
+ 
+@media (max-width:350px) {
+   input {
+    padding: 0;
+    width: 141px;
+   }
+}
